@@ -1,7 +1,52 @@
 <!DOCTYPE html>
-<html>
-    <body>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./test.css">
+    <title>Study</title>
+</head>
+<body>
+    <div>
         <h1>Hello World</h1>
-        <p>I'm hosted with GitHub pages.</p>
-    </body>
+        <p>勉強用</p>
+    </div>
+
+    <div>
+        <a href="">リンク</a>
+        <a href="#MoveTag">ページ内リンク</a>
+        <a target="MoveTag"></a>
+    </div>
+
+    <div>
+        <ul>
+            <li>一つ目の要素</li>
+            <li>二つ目の要素</li>
+        </ul>
+    </div>
+
+    <div>
+        <table id="inputFizzBuzzRule">
+            <tr>
+                <td class="tableTag">size:</td>
+                <td><input type="number" min="2" max="100" value="2" id="inputRuleSize" onchange="changeRuleSize(this.value)"></td>
+            </tr>
+            <tr class="fizzBuzzRule">
+                <td><input type="number" min="1" max="99" value="3" class="divideNumber"></td>
+                <td><input type="text" value="Fizz" class="displayText"></td>
+            </tr>
+            <tr class="fizzBuzzRule">
+                <td><input type="number" min="1" max="99" value="5" class="divideNumber"></td>
+                <td><input type="text" value="Buzz" class="displayText"></td>
+            </tr>
+        </table>
+        <p>
+            <input type="number" name="fizzbuzz" min="1" placeholder="fizzbuzzしたい数" id="inputFizzBuzz" onchange="checkFizzBuzz(this.value);">
+            <div id="displayFizzBuzz"></div>
+        </p>
+    </div>
+
+    <script type="text/javascript" src="./src.js"></script>
+</body>
 </html>
