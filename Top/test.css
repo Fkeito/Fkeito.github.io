@@ -21,12 +21,15 @@ div{
 }
 .active{
     transform: translateX(200px) rotate(180deg);
+    -webkit-transform: translateX(200px) rotate(180deg);
 }
 .move{
     animation: movement 1000ms ease 0s 1 normal forwards;
+    -webkit-animation: movement 1000ms ease 0s 1 normal forwards;
 }
 .rotate{
     animation: rotation 1000ms ease 0s 1 normal forwards;
+    -webkit-animation: rotation 1000ms ease 0s 1 normal forwards;
 }
 
 @keyframes movement{
