@@ -11,19 +11,37 @@
 </head>
 <body>
     <div>
-        <h1>Hello World</h1>
+        <h1 id="hello">Hello World</h1>
         <p>勉強用</p>
     </div>
 
     <div>
-        <p>link</p>
-        <a href="">リンク</a>
-        <a href="#MoveTag">ページ内リンク</a>
-        <a target="MoveTag"></a>
+        <p id="link">link</p>
+        <p>
+            <a href="https://www.google.co.jp">リンク</a>
+            <a href="#MoveTag">ページ内リンク</a>
+            <a id="MoveTag"></a>
+        </p>
+        <p>
+            <a href="#hello">Hello World</a>
+        </p>
+        <p>
+            <a href="#link">Link</a>
+        </p>
+        <p>
+            <a href="#list">List</a>
+        </p>
+        <p>
+            <a href="#js">JavaScript</a>
+        </p>
+        <p>
+            <a href="#anim">Animation</a>
+        </p>
     </div>
+    
 
     <div>
-        <p>list</p>
+        <p id="list">list</p>
         <ul>
             <li>一つ目の要素</li>
             <li>二つ目の要素</li>
@@ -31,7 +49,7 @@
     </div>
 
     <div>
-        <p>table/input/JavaScript</p>
+        <p id="js">table/input/JavaScript</p>
         <table id="inputFizzBuzzRule">
             <tr>
                 <td class="tableTag">size:</td>
@@ -53,7 +71,7 @@
     </div>
 
     <div>
-        <p>css Translate/Animation</p>
+        <p id="anim">css Translate/Animation</p>
         <div class="box" onclick="translateBox(this)"></div>
         <div class="box" onclick="moveBox(this)"></div>
         <div class="box" onclick="rotateBox(this)"></div>
