@@ -29,11 +29,6 @@ let mainCamera;
 
 let boxes;
 let spheres = [];
-
-let wheelDelta = 0;
-let mouseDragXDelta = 0;
-let distance = 10;
-let deg = 0;
 const materials = [
     new THREE.MeshBasicMaterial({color: 0xff6699}),
     new THREE.MeshBasicMaterial({color: 0x99ff66}),
@@ -41,6 +36,13 @@ const materials = [
     new THREE.MeshBasicMaterial({color: 0xffffff}),
     new THREE.MeshBasicMaterial({color: 0x000000}),
 ];
+
+/*
+let wheelDelta = 0;
+let mouseDragXDelta = 0;
+let distance = 10;
+let deg = 0;
+*/
 
 function awake(){
     /*
