@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', init);
-window.addEventListener('DOMContentLoaded', start);
 class Scene{
     constructor(camera){
         this.scene = new THREE.Scene();
@@ -27,6 +26,10 @@ function init(){
     mainScene.scene.add(dirLight);
 
     renderer.render(mainScene.scene, mainScene.mainCamera);
+
+    renderer.domElement.onwheel = onMouseWheel;
+
+    requestAnimationFrame(awake);
 }
 
 let renderer;
@@ -34,14 +37,23 @@ let mainScene;
 
 let box;
 
-function start(){
-    box = Box();
+let wheelDelta = 0;
+
+function awake(){
+    box = Box(1,1,1);
     mainScene.scene.add(box);
+
+    requestAnimationFrame(start);
+}
+function start(){
 
     update();
 }
 function update(){
     requestAnimationFrame(update);
+
+    mainScene.mainCamera.position.z = Math.min(20, Math.max(5, mainScene.mainCamera.position.z + wheelDelta * 0.05));
+    wheelDelta = 0;
 
     box.rotation.x += 0.01;
     box.rotation.y += 0.01;
@@ -49,12 +61,16 @@ function update(){
     renderer.render(mainScene.scene, mainScene.mainCamera);
 }
 
-function Box(){
-    const geometory = new THREE.BoxGeometry(1, 1, 1);
+function Box(x,y,z){
+    const geometory = new THREE.BoxGeometry(x, y, z);
     const material = new THREE.MeshStandardMaterial({
         color: 0xffffff
     });
     const box = new THREE.Mesh(geometory, material);
     return box;
+}
+
+function onMouseWheel(e){
+    wheelDelta = e.deltaY;
 }
 
