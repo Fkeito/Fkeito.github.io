@@ -60,6 +60,9 @@ function awake(){
     requestAnimationFrame(start);
 }
 function start(){
+    const ratio = 860 / window.innerWidth;
+    mainCamera.position.z *= ratio;
+
     boxes = [
         Box(1, 1, 1, materials[3]),
         Box(0.6, 0.6, 0.6, materials[0]),
@@ -69,7 +72,7 @@ function start(){
         Box(0.6, 0.6, 0.6, materials[2])
     ];
     for(let i = 0;i < 6;i++){
-        boxes[i].position.set((2 - 0.1 * (i % 2)) * (Math.floor(i / 2) - 1), 0, i % 2);
+        boxes[i].position.set(2 * (((i + 1) % 2) + (1 - 1 / mainCamera.position.z) * (i % 2)) * (Math.floor(i / 2) - 1), 0, i % 2);
         scene.add(boxes[i]);
     }
     for(let i = -1;i <= 1;i += 2){
